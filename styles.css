@@ -1,0 +1,8 @@
+div.container {
+	display: flex;
+	align-items: stretch;
+}
+
+div.box {
+	border: 3px solid black;
+}

@@ -6,6 +6,7 @@ for (let col = 0; col < 16; col++) {
 	for (let boxNum = 0; boxNum < 16; boxNum++) {
 		let box = document.createElement('div');
 		box.classList = 'box';
+		box.textContent = `Column: ${col + 1} || Box: ${boxNum + 1}`;
 		box.id = `box${boxNum + 1}`;
 		column.appendChild(box);
 	}
