@@ -2,6 +2,10 @@ const clearBtn = document.querySelector('#clear-btn');
 const changeBtn = document.querySelector('#change-btn');
 const gridContainer = document.querySelector('.grid');
 
+function changeGrid(size) {
+
+}
+
 function clearGrid() {
 	const boxes = document.querySelectorAll('.box');
 	boxes.forEach(box => box.style.backgroundColor = 'white');
