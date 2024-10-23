@@ -12,11 +12,18 @@ function changeGrid(size) {
 		for (let boxNum = 0; boxNum < size; boxNum++) {
 			let box = document.createElement('div');
 			box.classList = 'box';
-			box.id = `box${boxNum + 1}`;
+			box.id = `box${col + 1}-${boxNum + 1}`;
 
 			box.addEventListener('mouseover', event => {
 				const target = event.target;
-				target.style.backgroundColor = 'black';
+				target.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() *256)}, ${Math.floor(Math.random() * 256)})`;
+				let opacity = +target.style.opacity;
+				if (!opacity) {
+					target.style.opacity = '0.1';
+				} else if (opacity !== 1) {
+					opacity += 0.1;
+					target.style.opacity = `${opacity}`;
+				}
 			});
 			
 			column.appendChild(box);
@@ -27,7 +34,10 @@ function changeGrid(size) {
 
 function clearGrid() {
 	const boxes = document.querySelectorAll('.box');
-	boxes.forEach(box => box.style.backgroundColor = 'white');
+	boxes.forEach(box => {
+		box.style.backgroundColor = '';
+		box.style.opacity = '';
+	});
 }
 
 clearBtn.addEventListener('click', clearGrid);
